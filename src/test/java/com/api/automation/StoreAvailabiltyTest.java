@@ -26,11 +26,11 @@ public class StoreAvailabiltyTest {
 		
 		Map<String, Map<String,String>> map  = response.jsonPath().getMap("$");
 		for (Entry<String,Map<String,String>> entry : map.entrySet()) {
-			System.out.println(entry.getKey() + ": => " + entry.getValue().toString());
+		//	System.out.println(entry.getKey() + ": => " + entry.getValue().toString());
 			Map<String,String> value = entry.getValue();
 			String status = value.get("status");
 			if(status != null && status.equalsIgnoreCase("y")){
-				System.out.println(value.get("name"));
+				System.out.println("Country name : "+value.get("name"));
 				Assert.fail("Invalid country status y");
 
 			}
